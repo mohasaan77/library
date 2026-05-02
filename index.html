@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/svg" href="./favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Library</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>Library</h1>
+      <button type="button" id="new-btn" class="btn" command="show-modal" commandFor="add-dialog">+ New Book</button>
+    </div>
+
+    <dialog id="add-dialog">
+      <form id="book-input">
+        <div class="input-element">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" placeholder="Book title" required>
+        </div>
+
+        <div class="input-element">
+          <label for="author">Author</label>
+          <input type="text" id="author" name="author" placeholder="Author name" required>
+        </div>
+
+        <div class="input-element">
+          <label for="pages">Pages</label>
+          <input type="number" id="pages" name="pages" placeholder="Number of pages" required>
+        </div>
+
+        <div class="input-element">
+          <label for="read">Have you read this book?</label>
+          <input type="checkbox" id="read" name="read">
+        </div>
+      </form>
+
+      <div id="form-btn-container">
+        <button commandFor="add-dialog" command="close" id="close-btn" class="btn" >Close</button>
+        <button type="submit" form="book-input" id="add-btn" class="btn">Add Book</button>
+      </div>
+    </dialog>
+
+    <div id="book-container"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
